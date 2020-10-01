@@ -1,0 +1,21 @@
+This package provides an alternative word-by-word spellcheck interface.
+The function `spellsuggest-and-replace' sends the word at the cursor (if
+there is one) to the specified spellchecking program, and if it is
+determined to be misspelled, it creates a temporary popup buffer with
+alternate spellings (if they exist) as suggested by the program, with
+identifiers beside each. If a key corresponding to an identifier is
+pressed, the word at the cursor is replaced with the alternative
+indicated. Pressing the SPACE key exits the popup buffer without
+altering the text.
+
+This code assumes some kind of `ispell -a' compatibility.
+
+After setting either `spellsuggest-program' or `spellsuggest-args', the
+function `spellsuggest-variables-update' should be called.
+
+Example:
+
+(require 'spellsuggest)
+(setq spellsuggest-program "/usr/local/bin/hunspell")
+(setq spellsuggest-args '("-i" "UTF8"))
+(spellsuggest-variables-update)
