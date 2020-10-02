@@ -138,12 +138,10 @@
           nil))
     nil))
 
-;;doesn't need to pass buffer
 ;; There's a joke here if you know that originally
 ;; it was conceived that it would only label the first
-;; 10 options.
-;; The naming scheme remains from that, even though the
-;; prior assumptions were discarded.
+;; 10 options. The naming scheme remains from that, even
+;; though the prior assumptions were discarded.
 (defun spellsuggest--buf-digitalize ()
   (goto-char (point-min))
   (dolist (d spellsuggest--rep-args-list)
@@ -201,7 +199,6 @@
               (goto-char (point-min))
               (setq c (1+ c)))))))
           
-
 (defun insert--horizontal-list-cols (lst w h)
   ;; if current-column + length ! fit -> newline
   (when (and lst (> w 0) (> h 0))
