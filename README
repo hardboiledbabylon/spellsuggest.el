@@ -8,6 +8,13 @@ pressed, the word at the cursor is replaced with the alternative
 indicated. Pressing the SPACE key exits the popup buffer without
 altering the text.
 
+The variable `spellsuggest-vertical-mode' controls whether spelling
+suggestions are listed vertically or horizontally.  If non-nil,
+suggestions are listed vertically.
+
+The face `spellsuggest-arg-face' specifies the face properties of
+the key identifier listed with each spelling suggestion.
+
 This code assumes some kind of `ispell -a' compatibility.
 
 After setting either `spellsuggest-program' or `spellsuggest-args', the
