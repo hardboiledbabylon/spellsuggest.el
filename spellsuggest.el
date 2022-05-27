@@ -280,7 +280,10 @@
                         (delete-region (point-min) (point))
                         ;; comma divides words (followed by space)
                         ;;& monopolistically 6 0: monopolistic ally, monopolistic-ally, monopolistic, moralistically, nationalistically, opportunistically
-                        (setq word-list (split-string
+                        (when (> (skip-chars-forward "^\n") 0)
+                          (delete-region (point) (point-max)))
+                        (goto-char (point-min))
+			(setq word-list (split-string
                                          (buffer-substring-no-properties
                                           (point-min) (point-max)) "," t
                                           " +"))
